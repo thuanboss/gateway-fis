@@ -42,13 +42,13 @@ public class AuthenticationAndAuthorizationFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.debug("Request Method: {}, Request URL: {}, Request URI: {}", request.getMethod(), request.getRequestURI(), request.getRequestURI());
+        log.warn("Request Method: {}, Request URL: {}, Request URI: {}", request.getMethod(), request.getRequestURI(), request.getRequestURI());
 
-        if (isInWhiteList(request.getRequestURI())) {
-            return null;
-        }
-
-        log.debug("Validate JWT token for request: {}", request.getRequestURI());
+//        if (isInWhiteList(request.getRequestURI())) {
+//            return null;
+//        }
+//
+//        log.warn("Validate JWT token for request: {}", request.getRequestURI());
 //        String accessToken = getJwt(request);
 //
 //        if (accessToken == null) {
